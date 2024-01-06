@@ -26,10 +26,10 @@ def on_bar():
             if (bars['c'][-1] - bar['c']) / bars['c'][-1] > 0.01:
                 # data.append(bar)
                 pos_cnt += 1
-                print('+ sample', ts2dt(bars['ts'][-1]))
+                print('+ sample', ts2dt(bar['ts']))
             else:
                 neg_cnt += 1
-                print('- sample', ts2dt(bars['ts'][-1]))
+                print('- sample', ts2dt(bar['ts']))
         temp.clear()
 
     if bars['o'][-1] < bars['c'][-1] and bars['c'][-1] > hb.iloc[-1]:
