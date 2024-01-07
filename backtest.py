@@ -22,7 +22,7 @@ def on_bar():
     lb = indicator_bb.bollinger_lband()
 
     if long_pos.amount == 0:
-        if g.last_h > 0 and bars['c'][-1] > g.last_h and bars['c'][-1] > hb.iloc[-1]:
+        if g.last_h > 0 and bars['c'][-1] > g.last_h:
             order(symbol=g.symbol, side='open', position_side='long',
                   amount=1, price=bars['c'][-1])
             g.sl_price = g.last_hb
@@ -46,7 +46,7 @@ def on_bar():
 if __name__ == '__main__':
     init()
     backtest(
-        begin_dt='2023-12-1 00:00:00',
+        begin_dt='2023-1-1 00:00:00',
         end_dt='2023-12-31 23:59:59',
         time_frames=['1m', '15m'],
         exchange='okx',
